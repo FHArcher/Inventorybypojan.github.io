@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <h1>Inventory Management System (beta version)</h1>
+    <h2>by Fauzan Husain Mujiyanto (280)</h2>
+
+    <hr style="border-color: #007bff; margin-top: 30px; margin-bottom: 30px; width: 70%;">
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <!-- Form Input Barang -->
+        <div class="input-form">
+            <h3>Input Barang Masuk</h3>
+            <form id="addItemForm">
+                <input type="text" id="name" placeholder="Nama Barang" required>
+                <input type="number" id="quantity" placeholder="Jumlah" required>
+                <input type="number" id="price" placeholder="Harga per Unit" required>
+                <button type="submit" class="add">Tambah Barang</button>
+            </form>
+        </div>
+
+        <!-- Form Output Barang -->
+        <div class="output-form">
+            <h3>Input Barang Keluar</h3>
+            <form id="removeItemForm">
+                <select id="itemSelect" required>
+                    <option value="">Pilih Barang</option>
+                </select>
+                <input type="number" id="removeQuantity" placeholder="Jumlah Keluar" required>
+                <button type="submit" class="remove">Kurangi Stok</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Summary Section -->
+    <section class="summary-section">
+        <div class="total-price" style="display: flex; justify-content: space-between; align-items: center;">
+            <h3>Total Nilai Inventory</h3>
+            <div class="price-content">
+                <span id="totalPrice" class="amount">0</span>
+            </div>
+        </div>
+    </section>
+
+    <hr style="border-color: #007bff; margin: 30px 0;">
+
+    <!-- Table Container -->
+    <section class="table-container">
+        <div class="table-wrapper">
+            <!-- Tabel Input -->
+            <div class="table-section">
+                <h3>Data Barang Masuk</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Barang</th>
+                            <th>Jumlah</th>
+                            <th>Harga</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTable"></tbody>
+                </table>
+            </div>
+            
+            <!-- Tabel Output -->
+            <div class="table-section">
+                <h3>Data Barang Keluar</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Barang</th>
+                            <th>Jumlah </th>
+                            <th>Harga </th>
+                            <th>Total</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="outputInventoryTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <hr style="border-color: #007bff; margin: 30px 0;">
+
+    <!-- Rincian Daftar Barang -->
+    <section class="details-section">
+        <h3>Rincian Daftar Barang</h3>
+        <div id="itemsList" class="items-list"></div>
+    </section>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
